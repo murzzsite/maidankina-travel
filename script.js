@@ -31,7 +31,7 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/85JU64HPDD'
   // ===== intro =====
   const start = () => root.classList.add('go');
   if (document.fonts && document.fonts.ready) {
-    Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 900))]).then(() => requestAnimationFrame(start));
+    Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 900))]).then(start);
   } else start();
 
   // ===== split-flap codes =====
