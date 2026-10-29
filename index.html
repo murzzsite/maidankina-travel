@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карина Майданкина — турагент: туры, отели, страховки</title>
+<meta name="description" content="Карина Майданкина, турагент. Подбираю пакетные туры, отели и страховки для поездок из больших городов России. Мальдивы, Египет, ОАЭ, Таиланд, Турция, Куба, Маврикий, Доминикана.">
+<meta property="og:title" content="Карина Майданкина — турагент">
+<meta property="og:description" content="Туры, отели и страховки под ваши даты и бюджет. Подбор из любого большого города России.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bar" id="header">
+  <a class="bar__name" href="#top">Карина Майданкина<span> · турагент</span></a>
+  <nav class="bar__nav" id="nav" aria-label="Разделы">
+    <a href="#process">Как работаю</a>
+    <a href="#services">Что подбираю</a>
+    <a href="#price">Про цену</a>
+    <a href="#faq">Вопросы</a>
+  </nav>
+  <a class="btn btn--sm" href="#zayavka">Подобрать тур</a>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO: посадочный талон ================= -->
+<section class="hero" aria-labelledby="h1">
+  <img class="hero__img" src="assets/maldives.jpg" width="1920" height="1303" alt="Белый песок, пальмы и два шезлонга на пляже острова в Мальдивах">
+  <div class="pass" id="pass">
+    <div class="pass__main">
+      <h1 class="pass__h" id="h1">Ваш отпуск — от подбора до вылета</h1>
+      <div class="route" role="group" aria-label="Соберите маршрут">
+        <div class="route__end">
+          <label for="selFrom" class="route__lab">Откуда</label>
+          <div class="flap" id="codeFrom" aria-hidden="true">MOW</div>
+          <select id="selFrom" class="sel"></select>
+        </div>
+        <svg class="route__plane" viewBox="0 0 120 24" aria-hidden="true">
+          <path d="M2 12h96" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="1 9" stroke-linecap="round"/>
+          <path class="plane-ico" d="M104 12 90 5v5l-9 2 9 2v5l14-7z" fill="currentColor"/>
+        </svg>
+        <div class="route__end">
+          <label for="selTo" class="route__lab">Куда</label>
+          <div class="flap" id="codeTo" aria-hidden="true">MLE</div>
+          <select id="selTo" class="sel"></select>
+        </div>
+      </div>
+      <p class="pass__lead">Подбираю пакетные туры, отели и страховки под ваши даты и бюджет. Вылет из вашего города или ближайшего.</p>
+      <div class="pass__act">
+        <a class="btn" id="passGo" href="#zayavka">Подобрать этот маршрут</a>
+        <a class="link" href="#process">Как это устроено</a>
+      </div>
+    </div>
+    <div class="pass__stub" aria-hidden="true">
+      <dl>
+        <div><dt>Пассажир</dt><dd>Вы</dd></div>
+        <div><dt>Рейс</dt><dd id="stubTo">Мальдивы</dd></div>
+        <div><dt>Даты</dt><dd>Ваши</dd></div>
+        <div><dt>Бюджет</dt><dd>Ваш</dd></div>
+      </dl>
+      <svg class="barcode" id="barcode" viewBox="0 0 160 44" preserveAspectRatio="none"></svg>
+    </div>
+  </div>
+</section>
+
+<!-- бегущее табло -->
+<div class="board" aria-hidden="true">
+  <div class="board__track" id="boardTrack"></div>
+</div>
+
+<!-- ================= PROCESS: талон-маршрутка, пин ================= -->
+<section class="process" id="process" aria-labelledby="h-process">
+  <div class="process__pin">
+    <div class="process__txt">
+      <h2 class="h2" id="h-process">От заявки до вылета</h2>
+      <p class="lead">Вам не нужно сидеть на десяти сайтах туроператоров. Пишете пожелания, остальное собираю я, а решение остаётся за вами.</p>
+      <svg class="trail" id="trail" viewBox="0 0 420 200" aria-hidden="true">
+        <path id="trailPath" d="M10 180 C 90 190, 120 60, 210 90 S 330 150, 400 24" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="1 11" stroke-linecap="round"/>
+        <path id="trailDone" d="M10 180 C 90 190, 120 60, 210 90 S 330 150, 400 24" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+        <g id="trailPlane"><path d="M14 0 -2 -9v6l-10 3 10 3v6z" fill="var(--ink)"/></g>
+      </svg>
+    </div>
+    <div class="slip" id="slip">
+      <p class="slip__h">Маршрут вашей поездки</p>
+      <div class="slip__g">
+        <p class="slip__t">Сначала</p>
+        <ol class="slip__rows">
+          <li class="stage"><span>Вы пишете, куда хочется, когда и на какой бюджет</span><b>Вы</b></li>
+          <li class="stage"><span>Смотрю предложения туроператоров: тур, отель, перелёт</span><b>Карина</b></li>
+        </ol>
+      </div>
+      <div class="slip__g">
+        <p class="slip__t">Затем</p>
+        <ol class="slip__rows">
+          <li class="stage"><span>Присылаю варианты с разницей в цене, вы выбираете</span><b>Вместе</b></li>
+        </ol>
+      </div>
+      <div class="slip__g">
+        <p class="slip__t">Перед вылетом</p>
+        <ol class="slip__rows">
+          <li class="stage"><span>Бронирую, оформляю документы и страховку</span><b>Карина</b></li>
+          <li class="stage"><span>Вы летите отдыхать</span><b>Вы</b></li>
+        </ol>
+      </div>
+      <p class="slip__end">На руках: ваучер, билеты и страховой полис</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES: листы-папки ================= -->
+<section class="services" id="services" aria-labelledby="h-services">
+  <h2 class="h2 services__h" id="h-services">Что подбираю</h2>
+  <div class="sheets">
+    <article class="sheet" style="--i:0;--c:var(--sea)">
+      <h3>Пакетные туры</h3>
+      <div class="sheet__body">
+        <p>Перелёт, отель, трансфер и питание в одном предложении. Сравниваю несколько туроператоров на ваши даты и показываю, за что именно вы платите.</p>
+        <p class="sheet__dest">Мальдивы, Египет, ОАЭ, Таиланд, Турция, Куба, Маврикий, Доминикана и другие направления.</p>
+      </div>
+      <img src="assets/egypt.jpg" width="1920" height="1440" loading="lazy" alt="Сфинкс и пирамида Хефрена на плато Гиза, Египет">
+    </article>
+    <article class="sheet" style="--i:1;--c:var(--mint)">
+      <h3>Отели</h3>
+      <div class="sheet__body">
+        <p>Бронь отеля отдельно, если вы летите сами или едете по нескольким городам. Смотрю расположение, линию от моря и то, что входит в питание.</p>
+      </div>
+      <img src="assets/maldives.jpg" width="1920" height="1303" loading="lazy" alt="Пляжное бунгало под пальмами на острове в Мальдивах">
+    </article>
+    <article class="sheet" style="--i:2;--c:var(--sky2)">
+      <h3>Страховки для поездки</h3>
+      <div class="sheet__body">
+        <p>Медицинский полис под вашу страну и ваш отдых. Оформляю вместе с туром или отдельно, чтобы лечение за границей не оказалось вашей личной проблемой.</p>
+      </div>
+      <img src="assets/phuket.jpg" width="1920" height="1280" loading="lazy" alt="Закат над пляжем на Пхукете, Таиланд">
+    </article>
+    <article class="sheet" style="--i:3;--c:var(--paper)">
+      <h3>Всё для поездки</h3>
+      <div class="sheet__body">
+        <p>Авиабилеты, трансферы, экскурсии и другое, что нужно для вашей поездки. Напишите, что ищете, и скажу, как это собрать.</p>
+      </div>
+      <img src="assets/dubai.jpg" width="1920" height="1280" loading="lazy" alt="Небоскрёбы Дубая вечером">
+    </article>
+  </div>
+</section>
+
+<!-- ================= PRICE: «дорого» ================= -->
+<section class="price" id="price" aria-labelledby="h-price">
+  <div class="price__left">
+    <h2 class="h2" id="h-price">Дорого — не приговор</h2>
+    <p class="lead">Цена тура складывается из мелочей, и многие из них можно подвинуть. Покажу, где экономия безопасна, а где она выйдет дороже.</p>
+    <img class="price__ph" src="assets/phuket.jpg" width="1920" height="1280" loading="lazy" alt="Тихий пляж на Пхукете на рассвете">
+  </div>
+  <div class="menu">
+    <div class="menu__g">
+      <h3>Где можно сэкономить</h3>
+      <dl>
+        <div class="menu__r"><dt>Вылет в будни</dt><dd>дешевле</dd><p>В выходные и перед праздниками перелёты и туры обычно дороже.</p></div>
+        <div class="menu__r"><dt>Другой сезон</dt><dd>дешевле</dd><p>Одно и то же направление вне пика стоит заметно иначе.</p></div>
+        <div class="menu__r"><dt>Завтраки вместо «всё включено»</dt><dd>дешевле</dd><p>Если вы всё равно уходите гулять, полный пансион не нужен.</p></div>
+        <div class="menu__r"><dt>Отель во втором ряду</dt><dd>дешевле</dd><p>Несколько минут до моря пешком заметно снижают цену.</p></div>
+      </dl>
+    </div>
+    <div class="menu__g">
+      <h3>Где экономить не стоит</h3>
+      <dl>
+        <div class="menu__r"><dt>Страховка</dt><dd>дороже потом</dd><p>Лечение за границей без полиса оплачивается из вашего кармана.</p></div>
+        <div class="menu__r"><dt>Стыковка в час</dt><dd>рискованно</dd><p>Опоздание на второй рейс обходится дороже разницы в билете.</p></div>
+        <div class="menu__r"><dt>Отель без отзывов</dt><dd>рискованно</dd><p>Сэкономленное быстро съедают заменой номера или отеля.</p></div>
+      </dl>
+    </div>
+    <p class="menu__note">Цены на сайте не указываю: они зависят от предложений туроператоров на ваши даты. Посчитаю под ваш запрос.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq" aria-labelledby="h-faq">
+  <div class="faq__col">
+    <h2 class="h2" id="h-faq">Частые вопросы</h2>
+    <ul class="facts">
+      <li>Работаю онлайн, подбор из любого большого города России</li>
+      <li>Связь: WhatsApp или Telegram</li>
+      <li>Для путешественников от 18 лет</li>
+    </ul>
+    <div class="faqs">
+      <details><summary>Что нужно, чтобы вы начали подбор?</summary><p>Направление или пожелание к отдыху, примерные даты, сколько человек летит, бюджет и город вылета. Если что-то неизвестно, пишите как есть, разберёмся.</p></details>
+      <details><summary>Из каких городов можно улететь?</summary><p>Из любого большого города России. Прямых рейсов в нужную страну может не быть, тогда подберу вариант с пересадкой или вылетом из соседнего города.</p></details>
+      <details><summary>Можно ли оформить только отель или только страховку?</summary><p>Да. Тур целиком не обязателен: отель, страховку и другие услуги можно взять по отдельности.</p></details>
+      <details><summary>Почему не забронировать самому?</summary><p>Можно и самому. Я экономлю ваше время: сравниваю предложения туроператоров, объясняю условия и оформляю документы, чтобы вы не разбирались в тонкостях.</p></details>
+      <details><summary>Как оплачивается тур?</summary><p>Условия оплаты зависят от туроператора и выбранного тура. Расскажу при подборе, до того как вы что-то решите.</p></details>
+      <details><summary>А если мне нужно ещё одно путешествие?</summary><p>Пишите после поездки: подберём следующую. Ваши пожелания и предпочтения уже будут известны.</p></details>
+    </div>
+    <div class="faq__act">
+      <a class="btn" href="#zayavka">Подобрать тур</a>
+      <a class="link" href="https://t.me/Kmai777" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+  </div>
+  <div class="faq__pics">
+    <img class="faq__tall" src="assets/dubai.jpg" width="1920" height="1280" loading="lazy" alt="Небоскрёбы Дубая на закате">
+    <img class="faq__sq" src="assets/maldives.jpg" width="1920" height="1303" loading="lazy" alt="Пляж с пальмами на Мальдивах">
+  </div>
+</section>
+
+<!-- ================= CTA: карточка-ответ ================= -->
+<section class="cta" id="zayavka" aria-labelledby="h-cta">
+  <p class="cta__p">Напишите, куда хочется и когда. Вернусь с вариантами и объясню, из чего сложилась цена.</p>
+  <div class="card">
+    <h2 class="card__h" id="h-cta">Заявка на подбор</h2>
+    <form class="form" id="leadForm" novalidate>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="f"><label for="f-name">Как вас зовут</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
+      <div class="f"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" type="text" autocomplete="tel"></div>
+      <div class="f2">
+        <div class="f"><label for="f-city">Город вылета</label><select id="f-city" name="city"></select></div>
+        <div class="f"><label for="f-dest">Направление</label><select id="f-dest" name="dest"></select></div>
+      </div>
+      <div class="f"><label for="f-note">Даты, сколько человек, бюджет</label><textarea id="f-note" name="comment" rows="3" placeholder="Например: в феврале, двое взрослых, до 300 000 ₽"></textarea></div>
+      <label class="agree"><input type="checkbox" id="f-agree"><span>Согласен на обработку данных, <a href="privacy.html" target="_blank" rel="noopener">политика</a></span></label>
+      <button class="bar-btn" type="submit">Отправить заявку</button>
+      <p class="form__st" id="formSt" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER: обратная сторона открытки ================= -->
+<footer class="back">
+  <div class="postcard">
+    <svg class="scallops" viewBox="0 0 1200 50" preserveAspectRatio="none" aria-hidden="true"><path id="scallopPath" d=""/></svg>
+    <div class="postcard__in">
+      <div class="postcard__l">
+        <p class="postcard__hi">Хорошего отпуска!</p>
+        <p>Если вы читаете это, значит, уже думаете о поездке. Напишите мне: подберу тур, отель и страховку, а решение примете вы.</p>
+      </div>
+      <div class="postcard__r">
+        <img class="stamp" src="assets/maldives.jpg" width="88" height="117" alt="" loading="lazy">
+        <ul>
+          <li><a href="https://api.whatsapp.com/send?phone=79279768880" target="_blank" rel="noopener">WhatsApp +7 927 976-88-80</a></li>
+          <li><a href="https://t.me/Kmai777" target="_blank" rel="noopener">Telegram @Kmai777</a></li>
+          <li><a href="https://www.instagram.com/karina.maidankina" target="_blank" rel="noopener">Instagram @karina.maidankina</a></li>
+          <li>Онлайн, по всей России</li>
+        </ul>
+      </div>
+      <p class="postcard__imp">© <span id="year">2026</span> Карина Майданкина · <a href="privacy.html">Политика конфиденциальности</a></p>
+    </div>
+  </div>
+  <p class="credits">Фото: <a href="https://commons.wikimedia.org/wiki/File:Beach_and_bungalow._Eriyadu,_Maldives.jpg">«Beach and bungalow. Eriyadu, Maldives»</a>, Ввласенко, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=932796">«Sphinx und Chephren-Pyramide»</a>, Christian Rosenbaum, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Dubai_skyline_unsplash.jpg">«Dubai skyline unsplash»</a>, Robert Bock, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>; <a href="https://commons.wikimedia.org/wiki/File:Banana_beach_Phuket_2017_-_02.jpg">«Banana beach Phuket 2017 - 02»</a>, Anton Zelenov, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. Все — Wikimedia Commons. Фото показывают направления и не относятся к конкретным предложениям.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
