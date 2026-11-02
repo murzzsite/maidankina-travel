@@ -4,6 +4,6 @@
 
 - direction: The page is the object (seed 1178133508), палитра заменена на светлую (правило «только светлая тема»), шрифт Onest вместо Bricolage Grotesque (в Bricolage нет кириллицы)
 - форма → Cloudflare Worker, ref 85JU64HPDD
-- фото: Wikimedia Commons (кредиты в футере и assets/credits.json)
+- фото: личные фото клиента с Яндекс.Диска (HEIC сконвертированы, до 1600px)
 
 Заглушки/уточнить: цены не указаны (зависят от туроператоров), реквизиты в privacy.html, отзывов и фото Карины нет.

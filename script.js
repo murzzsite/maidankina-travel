@@ -75,7 +75,8 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/85JU64HPDD'
 
   // ===== header hide =====
   const header = $('#header');
-  let lastY = window.scrollY;
+  let lastY = window.scrollY, hideDown = false;
+  const sheetsEl = $('.sheets');
 
   // ===== process pin =====
   const proc = $('#process');
@@ -98,9 +99,11 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/85JU64HPDD'
   const onScroll = () => {
     ticking = false;
     const y = window.scrollY, vh = window.innerHeight;
-    if (y > lastY + 6 && y > 600) header.classList.add('hide');
-    if (y < lastY - 4 || y < 300) header.classList.remove('hide');
+    if (y > lastY + 6 && y > 600) hideDown = true;
+    if (y < lastY - 4 || y < 300) hideDown = false;
     lastY = y;
+    const sr = sheetsEl.getBoundingClientRect();
+    header.classList.toggle('hide', hideDown || (sr.top < 64 && sr.bottom > 0));
     const hero = $('.hero__img');
     if (!reduce && hero && y < vh) hero.style.translate = '0 ' + (y * 0.12).toFixed(1) + 'px';
     if (pinned() && !reduce) {
